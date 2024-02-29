@@ -1,0 +1,33 @@
+# Dependências instaladas
+/node_modules
+
+# Arquivo de log
+npm-debug.log*
+
+# Arquivos de dependências
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de build
+/build
+/dist
+
+# Arquivos gerados por IDEs ou editores de código
+.vscode
+.idea
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos de cache
+.cache
+
+# Logs e saída
+logs
+*.log
+*.out
