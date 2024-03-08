@@ -4,8 +4,10 @@ import { z } from "zod";
 import { hash } from "bcrypt";
 import { checkIfUserExists } from "../services/check-if-user-exists";
 import { newDate } from "../services/convert-date-to-string";
+import fastifyFormbody from "@fastify/formbody";
 
 export async function registerRoute(app: FastifyInstance) {
+  app.register(fastifyFormbody);
   app.post("/register", async (req, res) => {
     const userSchema = z.object({
       userName: z.string(),
@@ -71,12 +73,7 @@ export async function registerRoute(app: FastifyInstance) {
             },
           });
         case true:
-          return res.status(200).send({
-            LycooperAPI: {
-              code: 200,
-              message: "Login successful",
-            },
-          });
+          return res.redirect(200, "/dashboard");
         default:
           return res.status(401).send({
             LycooperAPI: {
